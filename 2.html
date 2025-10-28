@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна №2 — Варіант 8</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>Завдання 1 — Таблиця (варіант 8)</h3>
+
+  <table class="v8">
+    <!-- Рядок 1: ПІБ окремо; центр і правий стовпець тягнуться на 2 рядки -->
+    <tr class="row1">
+      <td>Криницька</td>                 <!-- кол.1 -->
+      <td>Каріна</td>                    <!-- кол.2 -->
+      <td rowspan="2">ІК-32</td> <!-- кол.3, rowspan=2 -->
+      <td>Володимирівна</td>             <!-- кол.4 (верхня) -->
+      <td rowspan="2">Варіант: 8</td>    <!-- кол.5, rowspan=2 -->
+    </tr>
+
+    <!-- Рядок 2: під першими двома — одна широка; під кол.4 — нижня -->
+    <tr class="row2">
+      <td colspan="2"><strong>Група:</strong> </td> <!-- кол.1-2 -->
+      <td>Лабораторна: №2</td>                           <!-- кол.4 -->
+      <!-- НІЯКОГО td для "Варіант": його займає клітинка з rowspan у рядку 1 -->
+    </tr>
+
+    <!-- Рядок 3: низ -->
+    <tr class="row3">
+      <td colspan="2">Примітка</td>  <!-- рівно під синьою «Група…» -->
+      <td colspan="3">Довга комірка</td>
+    </tr>
+  </table>
+<h3 style="margin-top:32px">Завдання 2 — Фігура (варіант 8)</h3>
+
+<!-- 1) Через position -->
+<h4>1) Через <code>position</code></h4>
+<div class="canvas pos">
+  <div class="sq a"></div>
+  <div class="sq b"></div>
+</div>
+
+<!-- 2) Через transform (без position) -->
+<h4>2) Через <code>transform</code> (без <code>position</code>)</h4>
+<div class="canvas trf">
+  <div class="sq2 a2"></div>
+  <div class="sq2 b2"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+body { font-family: system-ui, Arial, sans-serif; background:#fafafa; color:#222; padding:20px; }
+
+table.v8 {
+  border-collapse: collapse;
+  width: 900px;              /* стабільний макет */
+  table-layout: fixed;       /* рівномірний розподіл */
+}
+
+.v8 td {
+  border: 2px solid #000;
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 6px;
+}
+
+/* 1-й рядок — #ff8f8f */
+.row1 td { background:#ff8f8f; color:#111; }
+
+/* 2-й рядок — #5f5fff */
+.row2 td { background:#5f5fff; color:#fff; }
+
+/* 3-й рядок — білий */
+.row3 td { background:#fff; color:#222; }
+
+/* Hover: міняємо кольори місцями */
+.row1:hover td { background:#5f5fff; color:#fff; transition:.2s; }
+.row2:hover td { background:#ff8f8f; color:#111; transition:.2s; }
+
+/* ===== Завдання 2 ===== */
+.canvas{
+  width: 220px;
+  height: 170px;
+  position: relative;
+  margin: 8px 0 28px;
+}
+
+/* === 1) Через position === */
+.pos .sq{
+  width: 110px; height: 110px;
+  border: 6px solid #0c0c0c;
+  border-radius: 18px;
+  position: absolute;           /* ключове */
+  mix-blend-mode: multiply;     /* природне затемнення в перекритті */
+}
+.pos .sq.a{ background:#e9a97f; left: 10px; top: 10px; }
+.pos .sq.b{ background:#b98787; left: 70px; top: 70px; }
+
+/* ===== Завдання 2: Варіант 8 ===== */
+
+/* Базове полотно */
+.canvas{
+  margin: 8px 0 28px;
+}
+
+/* ---------- 1) Рішення через position ---------- */
+.pos{
+  position: relative;
+  width: 220px;              /* робоча область під два квадрати */
+  height: 170px;
+}
+
+.pos .sq{
+  width: 110px; height: 110px;
+  border: 6px solid #0c0c0c;
+  border-radius: 18px;
+  position: absolute;        /* ключове */
+  mix-blend-mode: multiply;  /* природне затемнення у зоні перекриття */
+  box-sizing: border-box;
+}
+.pos .sq.a{ background:#e9a97f; left:10px; top:10px; }
+.pos .sq.b{ background:#b98787; left:70px; top:70px; }
+
+/* ---------- 2) Рішення тільки через transform (без position) ---------- */
+/* Використовуємо flex, щоб обидва квадрати стояли в одному рядку,
+   а перекриття робимо суто зсувами transform */
+.trf{
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  width: 260px;             /* 2 * (110 + 2*6) = 244px → запас, щоб не переносилося */
+  height: 170px;
+}
+
+.trf .sq2{
+  width: 110px; height: 110px;
+  border: 6px solid #0c0c0c;
+  border-radius: 18px;
+  mix-blend-mode: multiply;
+  box-sizing: border-box;
+}
+
+.trf .a2{
+  background:#e9a97f;
+  transform: translate(10px, 10px);   /* трохи вниз і вправо */
+}
+
+.trf .b2{
+  background:#b98787;
+  transform: translate(-30px, 70px);  /* лівіше і нижче для перекриття */
+}
