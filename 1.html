@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Криницька К. В., ІК-32 — Персональна сторінка</title>
+
+  <meta name="description" content="Персональна веб-сторінка студентки Криницької Каріни Володимирівни, група ІК-32: коротко про себе, хобі, улюблені фільми/книги та улюблене місто." />
+  <meta name="keywords" content="Криницька Каріна Володимирівна, ІК-32, студент, хобі, улюблені фільми, улюблені книги, улюблене місто" />
+
+  <style>
+    body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.6; margin:0; color:#222;}
+    header, main, footer{max-width:900px; margin:auto; padding:16px;}
+    header{background:#f6f6f6; border-bottom:1px solid #e5e5e5;}
+    h1{margin:0 0 8px;}
+    h2{margin-top:1.2em}
+    ul,ol{padding-left:1.25rem}
+    figure{margin:1rem 0}
+    figure img{max-width:100%; height:auto; display:block; border-radius:8px}
+    figcaption{font-size:.9rem; color:#555}
+    a{color:#0b66c3; text-decoration:none}
+    a:hover{text-decoration:underline}
+    footer{font-size:.9rem; color:#666; border-top:1px solid #eee}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Лабораторна робота №1 — HTML5</h1>
+    <p><strong>Студентка:</strong> Криницька Каріна Володимирівна, група <strong>ІК-32</strong></p>
+  </header>
+
+  <main>
+    <!-- 1) Прізвище, ім'я, по батькові (H2) -->
+    <h2>Криницька Каріна Володимирівна</h2>
+
+    <!-- 2) Дата і місце народження -->
+    <p><strong>Дата народження:</strong> 10.07.2006<br>
+       <strong>Місце народження:</strong> м.Снігурівка</p>
+
+    <!-- 3) Освіта -->
+    <p><strong>Освіта:</strong>Снігурівська районна гімназія, нині студентка КПІ, факультет ФІОТ(група ІК-32).</p>
+
+    <!-- 4) Хобі (ненумерований список, не менше 3 пунктів) -->
+    <h2>Мої хобі</h2>
+    <ul>
+      <li>3D-друк та моделювання</li>
+      <li>Моделізм</li>
+      <li>Дота 2</li>
+    </ul>
+
+    <!-- 5) Улюблені книги/фільми (нумерований список) -->
+    <h2>Улюблені книги / фільми</h2>
+    <ol>
+      <li>Бійцівський клуб</li>
+      <li>Марсіанин</li>
+      <li>Серія фільмів друзів Оушена</li>
+    </ol>
+
+    <!-- 6) Абзац про улюблене місто -->
+    <h2>Моє улюблене місто</h2>
+    <p>Одне з улюблених міст — Львів. Подобається історична архітектура, атмосфера кав’ярень та вузькі вулички старого міста.</p>
+
+    <!-- 7) Фото цього міста + 8) гіперпосилання на фото з адресою сайту міста -->
+    <figure>
+      <!-- Постав свій файл, наприклад images/lviv.jpg у папці проєкту -->
+      <a href="https://lviv.travel" target="_blank" rel="noopener">
+        <img src="https://aws-travel-guide.s3.eu-west-1.amazonaws.com/default_image_size/603fc39c503d9_03%20%D0%9B%D1%8C%D0%B2%D1%96%D0%B2.jpg" alt="Панорама Львова — улюблене місто" />
+      </a>
+      <figcaption>Натисни на фото, щоб перейти на офіційний туристичний сайт міста Львова.</figcaption>
+    </figure>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Криницька Каріна Володимирівна, ІК-32</p>
+  </footer>
+</body>
+</html>
