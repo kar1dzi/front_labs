@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна №3 — Блочна верстка (float & flex)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="topnav">
+    <a href="1.html">Лабораторна 1</a>
+    <a href="2.html">Лабораторна 2</a>
+    <a href="3.html" class="active">Лабораторна 3</a>
+  </nav>
+
+  <main class="page">
+
+    <h1>Лабораторна №3. Блочна верстка макету</h1>
+
+    <!-- ===== 1) FLOAT ===== -->
+    <h2>1) float (width у відсотках)</h2>
+    <section class="frame">
+      <div class="wrap no-gap">
+        <div class="bar top">Text</div>
+        <div class="bar mid">Img.</div>
+
+        <div class="clearfix">
+          <div class="imgBig f-left">img.</div>
+          <aside class="sidebar f-right">Text</aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2) FLEX ===== -->
+    <h2>2) flex</h2>
+    <section class="frame">
+      <div class="wrap no-gap">
+        <div class="bar top">Text</div>
+        <div class="bar mid">Img.</div>
+
+        <div class="row-flex">
+          <div class="imgBig">img.</div>
+          <aside class="sidebar">Text</aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
