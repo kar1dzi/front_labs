@@ -127,3 +127,43 @@ table.v8 {
   background-color: #0b66c3; /* активна вкладка */
   color: white;
 }
+/* База для сторінки ЛР3 */
+* { box-sizing: border-box; }
+.page { max-width: 1200px; margin: 0 auto; padding: 16px; }
+
+/* Сірий зовнішній фон макета + «біле полотно» всередині */
+.frame { background:#bfbfbf; padding: 24px; margin: 16px 0; }
+.wrap  { background:#ffffff; margin: 0; }
+
+/* ВАЖЛИВО: повна відсутність внутрішніх відступів/щілин */
+.no-gap, .no-gap * { margin: 0; padding: 0; }
+
+/* Верхні смуги */
+.bar { border: 2px solid #1f2a37; color:#1f2a37; font-weight:700;
+       text-align:center; line-height: 64px; }
+.bar.top { background:#59a0d4; height:64px; }
+.bar.mid { background:#ebb4df; height:56px; }
+
+/* Нижній блок */
+.imgBig  { background:#c7e89a; border:2px solid #1f2a37; height:340px;
+           display:flex; align-items:center; justify-content:center; font-weight:700; }
+.sidebar { background:#8fb06e; border:2px solid #1f2a37; height:340px;
+           display:flex; align-items:center; justify-content:center; font-weight:700; }
+
+/* ===== 1) FLOAT ===== */
+.f-left  { float:left;  width: 75%; }   /* ліва велика зона */
+.f-right { float:right; width: 25%; }   /* правий вузький стовпець */
+.clearfix::after{ content:""; display:block; clear:both; }
+
+/* ===== 2) FLEX ===== */
+.row-flex { display:flex; gap:0; }
+.row-flex .imgBig  { flex: 0 0 75%; }
+.row-flex .sidebar { flex: 0 0 25%; }
+
+/* Адаптив: у стовпчик, також без щілин */
+@media (max-width: 800px){
+  .imgBig, .sidebar { height:220px; }
+  .f-left, .f-right { float:none; width:100%; }
+  .row-flex { flex-direction: column; }
+  .row-flex .imgBig, .row-flex .sidebar { flex-basis:100%; }
+}
