@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лабораторна 5 — JavaScript: події, регулярні вирази</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script5.js" defer></script>
+</head>
+<body>
+<nav class="topnav">
+  <a href="./index.html">Лабораторна 1</a>
+  <a href="./2.html">Лабораторна 2</a>
+  <a href="./3.html">Лабораторна 3</a>
+  <a href="./5.html" class="active">Лабораторна 5</a>
+</nav>
+
+<header>
+  <h1>Лабораторна робота №5 — JavaScript. Події. Регулярні вирази</h1>
+  <p><strong>Студентка:</strong> Криницька Каріна Володимирівна, група <strong>ІК-32</strong></p>
+  <p><strong>Варіант:</strong> 11</p>
+</header>
+
+<main>
+  <!-- ===================== ЗАВДАННЯ 1 ===================== -->
+  <section>
+    <h2>Завдання 1 — Формування та валідація форми (варіант 11)</h2>
+    <p>
+      З таблиці 1 для варіанта 11 обрано рядок: <strong>1, 4, 6, 7, 8</strong>. <br>
+      З таблиці 2 відповідно беруться поля: <strong>ПІБ, Телефон, Факультет, Дата народження, Адреса</strong>.
+      На основі цих даних нижче сформовано форму. Валідація виконується за допомогою
+      регулярних виразів.
+    </p>
+
+    <form id="lab5-form">
+      <table class="lab5-form-table">
+        <tbody id="form-body">
+        <!-- Рядки форми підставляються динамічно в script5.js згідно з варіантом -->
+        </tbody>
+      </table>
+
+      <button type="submit" class="btn-primary">Перевірити та вивести дані</button>
+    </form>
+
+    <p class="small-hint">
+      Формат для полів (відповідає таблиці 2):<br>
+      • ПІБ: <code>Прізвище І.П.</code> (літери + пробіл + ініціали з крапками)<br>
+      • Телефон: <code>(XXX)-XXX-XX-XX</code><br>
+      • Факультет: лише літери (наприклад, <code>ФІОТ</code>)<br>
+      • Дата народження: <code>ДД.ММ.РРРР</code><br>
+      • Адреса: <code>м. 12345</code> (індекс з 5 цифр)
+    </p>
+  </section>
+
+  <hr>
+
+  <!-- ===================== ЗАВДАННЯ 2 ===================== -->
+  <section>
+    <h2>Завдання 2 — Події в таблиці 6×6 (варіант 11)</h2>
+
+    <p>
+      Таблиця 6×6 заповнена числами від 1 до 36. Для клітинки з номером
+      <strong>11</strong>:
+    </p>
+    <ul>
+      <li><strong>mouseover</strong> — клітинка забарвлюється у випадковий колір;</li>
+      <li><strong>click</strong> — клітинка забарвлюється у колір, обраний у палітрі;</li>
+      <li><strong>dblclick</strong> — згідно варіанта 6 змінюється колір всіх
+        клітинок прямокутника <strong>, утвореного, починаючи з вибраної комірки таблиці</strong>.
+      </li>
+    </ul>
+
+    <label for="colorPicker"><strong>Оберіть колір для таблиці:</strong></label>
+    <input type="color" id="colorPicker" value="#ff0000">
+
+    <table id="task2-table" class="lab5-table-6x6">
+      <!-- Скрипт script5.js заповнить таблицю числами від 1 до 36 -->
+      <tbody></tbody>
+    </table>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Криницька Каріна Володимирівна, ІК-32</p>
+</footer>
+</body>
+</html>

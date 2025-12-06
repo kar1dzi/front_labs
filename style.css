@@ -224,3 +224,61 @@ table.v8 {
   cursor: pointer;
   font-size: 14px;
 }
+/* ========= ЛР5: форма (завдання 1) ========= */
+.lab5-form-table {
+  border-collapse: collapse;
+  margin: 10px 0 15px;
+  max-width: 600px;
+}
+
+.lab5-form-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+}
+
+.lab5-form-table td:first-child {
+  width: 160px;
+  font-weight: 600;
+}
+
+.lab5-form-table input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 6px;
+}
+
+.lab5-form-row.error {
+  background: #ffe6e6;
+}
+
+.lab5-form-row.error input {
+  border: 2px solid #d00;
+}
+
+.btn-primary {
+  padding: 6px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.small-hint {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ========= ЛР5: таблиця 6×6 (завдання 2) ========= */
+.lab5-table-6x6 {
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.lab5-table-6x6 td {
+  border: 1px solid #888;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+}
