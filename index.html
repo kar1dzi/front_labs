@@ -4,10 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Криницька К. В., ІК-32 — Персональна сторінка</title>
-<link rel="stylesheet" href="style.css">
+
+  <!-- Загальний CSS і JS для лабораторних -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
   <meta name="description" content="Персональна веб-сторінка студентки Криницької Каріни Володимирівни, група ІК-32: коротко про себе, хобі, улюблені фільми/книги та улюблене місто." />
   <meta name="keywords" content="Криницька Каріна Володимирівна, ІК-32, студент, хобі, улюблені фільми, улюблені книги, улюблене місто" />
 
+  <!-- Стилі саме для ЛР1 (як було) -->
   <style>
     body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.6; margin:0; color:#222;}
     header, main, footer{max-width:900px; margin:auto; padding:16px;}
@@ -24,62 +29,88 @@
   </style>
 </head>
 <body>
+
+<!-- Вкладки (у тебе можуть бути ще 2.html, 3.html тощо) -->
 <nav class="topnav">
   <a href="./index.html" class="active">Лабораторна 1</a>
   <a href="./2.html">Лабораторна 2</a>
-    <a href="3.html" class="active">Лабораторна 3</a>
+  <a href="./3.html">Лабораторна 3</a>
+  <a href="./4.html">Лабораторна 4</a> <!-- якщо буде окрема сторінка, поки можна лишити так -->
 </nav>
 
+<header>
+  <h1>Лабораторна робота №1 — HTML5</h1>
+  <p><strong>Студентка:</strong> Криницька Каріна Володимирівна, група <strong>ІК-32</strong></p>
+</header>
 
+<main>
+  <!-- ЛР1 -->
+  <h2>Криницька Каріна Володимирівна</h2>
 
-  <header>
-    <h1>Лабораторна робота №1 — HTML5</h1>
-    <p><strong>Студентка:</strong> Криницька Каріна Володимирівна, група <strong>ІК-32</strong></p>
-  </header>
+  <p><strong>Дата народження:</strong> 10.07.2006<br>
+     <strong>Місце народження:</strong> м. Снігурівка</p>
 
-  <main>
-    <!-- 1) Прізвище, ім'я, по батькові (H2) -->
-    <h2>Криницька Каріна Володимирівна</h2>
+  <p><strong>Освіта:</strong> Снігурівська районна гімназія, нині студентка КПІ, факультет ФІОТ (група ІК-32).</p>
 
-    <!-- 2) Дата і місце народження -->
-    <p><strong>Дата народження:</strong> 10.07.2006<br>
-       <strong>Місце народження:</strong> м.Снігурівка</p>
+  <h2>Мої хобі</h2>
+  <ul>
+    <li>3D-друк та моделювання</li>
+    <li>Моделізм</li>
+    <li>Дота 2</li>
+  </ul>
 
-    <!-- 3) Освіта -->
-    <p><strong>Освіта:</strong>Снігурівська районна гімназія, нині студентка КПІ, факультет ФІОТ(група ІК-32).</p>
+  <h2>Улюблені книги / фільми</h2>
+  <ol>
+    <li>Бійцівський клуб</li>
+    <li>Марсіанин</li>
+    <li>Серія фільмів друзів Оушена</li>
+  </ol>
 
-    <!-- 4) Хобі (ненумерований список, не менше 3 пунктів) -->
-    <h2>Мої хобі</h2>
-    <ul>
-      <li>3D-друк та моделювання</li>
-      <li>Моделізм</li>
-      <li>Дота 2</li>
-    </ul>
+  <h2>Моє улюблене місто</h2>
+  <p>Одне з улюблених міст — Львів. Подобається історична архітектура, атмосфера кав’ярень та вузькі вулички старого міста.</p>
 
-    <!-- 5) Улюблені книги/фільми (нумерований список) -->
-    <h2>Улюблені книги / фільми</h2>
-    <ol>
-      <li>Бійцівський клуб</li>
-      <li>Марсіанин</li>
-      <li>Серія фільмів друзів Оушена</li>
-    </ol>
+  <figure>
+    <a href="https://lviv.travel" target="_blank" rel="noopener">
+      <img src="https://aws-travel-guide.s3.eu-west-1.amazonaws.com/default_image_size/603fc39c503d9_03%20%D0%9B%D1%8C%D0%B2%D1%96%D0%B2.jpg" alt="Панорама Львова — улюблене місто" />
+    </a>
+    <figcaption>Натисни на фото, щоб перейти на офіційний туристичний сайт міста Львова.</figcaption>
+  </figure>
 
-    <!-- 6) Абзац про улюблене місто -->
-    <h2>Моє улюблене місто</h2>
-    <p>Одне з улюблених міст — Львів. Подобається історична архітектура, атмосфера кав’ярень та вузькі вулички старого міста.</p>
+  <!-- ЛР4 -->
+  <hr>
+  <h2>Лабораторна робота №4</h2>
 
-    <!-- 7) Фото цього міста + 8) гіперпосилання на фото з адресою сайту міста -->
-    <figure>
-      <!-- Постав свій файл, наприклад images/lviv.jpg у папці проєкту -->
-      <a href="https://lviv.travel" target="_blank" rel="noopener">
-        <img src="https://aws-travel-guide.s3.eu-west-1.amazonaws.com/default_image_size/603fc39c503d9_03%20%D0%9B%D1%8C%D0%B2%D1%96%D0%B2.jpg" alt="Панорама Львова — улюблене місто" />
-      </a>
-      <figcaption>Натисни на фото, щоб перейти на офіційний туристичний сайт міста Львова.</figcaption>
-    </figure>
-  </main>
+  <h3>Завдання 1 — робота з елементами за номером</h3>
+  <ul id="elements-list">
+    <li id="item-1">Елемент 1</li>
+    <li id="item-2">Елемент 2</li>
+    <li id="item-3">Елемент 3</li>
+    <li id="item-4">Елемент 4</li>
+    <li id="item-5">Елемент 5</li>
+    <li id="item-6">Елемент 6</li>
+    <li id="item-7">Елемент 7 (getElementById)</li>
+    <li id="item-8">Елемент 8 (querySelector)</li>
+  </ul>
 
-  <footer>
-    <p>&copy; 2025 Криницька Каріна Володимирівна,ІК-32</p>
-  </footer>
+  <h3>Завдання 2 — керування зображенням</h3>
+
+  <div id="image-block">
+    <div id="images-wrapper">
+      <img src="img.jpg" alt="Зображення" class="lab4-img">
+    </div>
+
+    <div class="buttons">
+      <button id="btn-add">Додати</button>
+      <button id="btn-bigger">Збільшити</button>
+      <button id="btn-smaller">Зменшити</button>
+      <button id="btn-remove">Видалити</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Криницька Каріна Володимирівна, ІК-32</p>
+</footer>
 </body>
 </html>
