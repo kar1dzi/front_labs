@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лабораторна 6 — randomuser.me, fetch + JSON</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="lab6.js" defer></script>
+</head>
+<body>
+<nav class="topnav">
+  <a href="./index.html">Лабораторна 1</a>
+  <a href="./2.html">Лабораторна 2</a>
+  <a href="./3.html">Лабораторна 3</a>
+  <a href="./4.html">Лабораторна 4</a>
+  <a href="./5.html">Лабораторна 5</a>
+  <a href="./6.html" class="active">Лабораторна 6</a>
+</nav>
+
+<header>
+  <h1>Лабораторна робота №6 — Отримання даних через fetch</h1>
+  <p><strong>Варіант:</strong> 6 (поля: picture, name, city, country, postcode)</p>
+</header>
+
+<main>
+  <section>
+    <button id="btn-load-user" class="btn-primary">Отримати користувача</button>
+    <div id="load-status" class="small-hint"></div>
+
+    <div id="user-card" class="user-card hidden">
+      <img id="user-picture" src="" alt="Фото користувача">
+
+      <div class="user-info">
+        <p><strong>Ім’я:</strong> <span id="user-name"></span></p>
+        <p><strong>Місто:</strong> <span id="user-city"></span></p>
+        <p><strong>Країна:</strong> <span id="user-country"></span></p>
+        <p><strong>Поштовий індекс:</strong> <span id="user-postcode"></span></p>
+      </div>
+    </div>
+
+    <div id="error-box" class="error-msg"></div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Криницька Каріна Володимирівна, ІК-32</p>
+</footer>
+</body>
+</html>

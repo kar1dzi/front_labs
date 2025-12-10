@@ -282,3 +282,48 @@ table.v8 {
   cursor: pointer;
   user-select: none;
 }
+/* ===== ЛР6: карта користувача randomuser.me ===== */
+
+.user-card {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 450px;
+  display: flex;
+  gap: 16px;
+  background: #fafafa;
+}
+
+.user-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info p {
+  margin: 4px 0;
+}
+
+.btn-primary {
+  padding: 6px 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.small-hint {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.error-msg {
+  margin-top: 8px;
+  color: #b00020;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
+}
