@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Лабораторна 7 — React</title>
+    <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- React 18 + Babel через CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body{
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      margin:0;
+      background:#f7f7f7;
+      color:#222;
+    }
+    .app-wrapper{
+      max-width:900px;
+      margin:0 auto;
+      padding:16px;
+      background:#fff;
+      min-height:100vh;
+    }
+    header{
+      border-bottom:1px solid #e1e1e1;
+      margin-bottom:16px;
+    }
+    header h1{
+      margin:0 0 4px;
+    }
+    header p{
+      margin:0 0 8px;
+    }
+
+    h2{
+      margin-top:24px;
+    }
+
+    /* ===== Частина з 4-ої лаби ===== */
+    .elements-list{
+      padding-left:20px;
+    }
+    .elements-list li{
+      cursor:pointer;
+      padding:2px 4px;
+      border-radius:4px;
+      margin-bottom:2px;
+      transition:background .2s,color .2s;
+    }
+
+    .image-block{
+      margin-top:16px;
+    }
+    .image-wrapper{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:8px;
+    }
+    .image-wrapper img{
+      border-radius:6px;
+      display:block;
+    }
+    .buttons-row{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .buttons-row button{
+      padding:6px 10px;
+      cursor:pointer;
+    }
+
+    /* ===== Галерея товарів ===== */
+    .goods-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    .goods-card{
+      border:1px solid #ddd;
+      border-radius:8px;
+      padding:8px;
+      background:#fafafa;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+    }
+    .goods-card img{
+      width:120px;
+      height:120px;
+      object-fit:cover;
+      border-radius:6px;
+      margin-bottom:6px;
+    }
+    .goods-card .title{
+      font-weight:600;
+      margin-bottom:4px;
+    }
+    .goods-card .price{
+      color:#007b47;
+      font-weight:600;
+    }
+
+    footer{
+      margin-top:24px;
+      border-top:1px solid #eee;
+      padding-top:8px;
+      font-size:.9rem;
+      color:#666;
+    }
+  </style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="./index.html">Лабораторна 1</a>
+  <a href="./2.html">Лабораторна 2</a>
+  <a href="./3.html">Лабораторна 3</a>
+  <a href="./5.html">Лабораторна 5</a>
+  <a href="./6.html" class="active">Лабораторна 6</a>
+    <a href="./7.html" class="active">Лабораторна 7</a>
+</nav>
+<div id="root"></div>
+
+<script type="text/babel">
+  // ================= Header (function) =================
+  function Header() {
+    return (
+      <header>
+        <h1>Лабораторна робота №7 — React</h1>
+        <p><strong>Студентка:</strong> Криницька Каріна Володимирівна, група <strong>ІК-32</strong></p>
+        <p>Завдання: реалізувати функціонал ЛР №4 та галерею товарів за допомогою React.</p>
+      </header>
+    );
+  }
+
+  // ================= Image (function) =================
+  // Картинка з 4-ої лаби
+  function Image({ src, width, alt }) {
+    return <img src={src} width={width} alt={alt} />;
+  }
+
+  // ================= Content (class) =================
+  // Вміст з функціоналом ЛР №4 (список + робота з зображеннями)
+  class Content extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      item7Colored: false,    // тільки колір тексту
+      item8Highlighted: false,
+      imageCount: 1,
+      imageWidth: 320
+    };
+  }
+
+  toggleItemColor = (index) => {
+    if (index === 7) {
+      this.setState(prev => ({ item7Colored: !prev.item7Colored }));
+    }
+    if (index === 8) {
+      this.setState(prev => ({ item8Highlighted: !prev.item8Highlighted }));
+    }
+  };
+
+  handleAddImage = () => {
+    this.setState(prev => ({ imageCount: prev.imageCount + 1 }));
+  };
+
+  handleRemoveImage = () => {
+    this.setState(prev => ({ imageCount: Math.max(0, prev.imageCount - 1) }));
+  };
+
+  handleBigger = () => {
+    this.setState(prev => ({ imageWidth: Math.min(prev.imageWidth + 40, 500) }));
+  };
+
+  handleSmaller = () => {
+    this.setState(prev => ({ imageWidth: Math.max(prev.imageWidth - 40, 120) }));
+  };
+
+  render() {
+    const { item7Colored, item8Highlighted, imageCount, imageWidth } = this.state;
+    const listItems = Array.from({ length: 8 }, (_, i) => i + 1);
+
+    return (
+      <section>
+        <h2>Частина 1 — реалізація ЛР №4 на React</h2>
+
+        <h3>Завдання 1 — робота з елементами списку</h3>
+        <ul className="elements-list">
+          {listItems.map(i => {
+            let style = {};
+
+            if (i === 7 && item7Colored) {
+              // тільки колір тексту
+              style = { color: "#5f5fff" };
+            }
+
+            if (i === 8 && item8Highlighted) {
+              // фон + колір тексту
+              style = { background: "#5f5fff", color: "#fff" };
+            }
+
+            return (
+              <li
+                key={i}
+                style={style}
+                onClick={() => this.toggleItemColor(i)}
+              >
+                Елемент {i}
+                {i === 7 && " (React-варіант getElementById)"}
+                {i === 8 && " (React-варіант querySelector)"}
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* далі — те саме, що було: блок із зображеннями */}
+        <h3>Завдання 2 — керування зображеннями</h3>
+        <div className="image-block">
+          <div className="image-wrapper">
+            {imageCount === 0 ? (
+              <p>Усі зображення видалені. Натисніть «Додати», щоб відновити.</p>
+            ) : (
+              Array.from({ length: imageCount }).map((_, idx) => (
+                <Image
+                  key={idx}
+                  src="img.jpg"
+                  width={imageWidth}
+                  alt="Львів"
+                />
+              ))
+            )}
+          </div>
+
+          <div className="buttons-row">
+            <button onClick={this.handleAddImage}>Додати</button>
+            <button onClick={this.handleBigger}>Збільшити</button>
+            <button onClick={this.handleSmaller}>Зменшити</button>
+            <button onClick={this.handleRemoveImage}>Видалити</button>
+          </div>
+        </div>
+      </section>
+    );
+  }
+}
+
+  // ================= GoodsCard (function) =================
+  function GoodsCard({ img, title, price }) {
+    return (
+      <div className="goods-card">
+        <img src={img} alt={title} />
+        <div className="title">{title}</div>
+        <div className="price">{price} грн</div>
+      </div>
+    );
+  }
+
+  // ================= App (function) =================
+  function App() {
+    // Галерея з не менше 6 товарів
+    const goods = [
+      { id: 1, title: "Фігурка «Кібер-кіт»",   price: 650, img: "img1.jpg" },
+      { id: 2, title: "Статуя «Грецька богиня»", price: 1540, img: "img2.jpg" },
+      { id: 3, title: "Органайзер для інструментів", price: 320, img: "img3.jpg" },
+      { id: 4, title: "Кастомний брелок",       price: 180, img: "img4.jpg" },
+      { id: 5, title: "Корпус під електроніку", price: 420, img: "img5.jpg" },
+      { id: 6, title: "3D-друкована ваза",      price: 510, img: "img6.jpg" },
+    ];
+
+    return (
+      <div className="app-wrapper">
+        <Header />
+        <Content />
+
+        <section>
+          <h2>Частина 2 — Галерея товарів</h2>
+          <p>Галерея на основі компонента <code>GoodsCard</code>, дані передаються через <code>props</code>.</p>
+          <div className="goods-grid">
+            {goods.map(item => (
+              <GoodsCard
+                key={item.id}
+                img={item.img}
+                title={item.title}
+                price={item.price}
+              />
+            ))}
+          </div>
+        </section>
+
+        <footer>
+          &copy; 2025 Криницька Каріна Володимирівна, ІК-32
+        </footer>
+      </div>
+    );
+  }
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>
+</body>
+</html>
